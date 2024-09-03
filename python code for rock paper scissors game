@@ -1,0 +1,63 @@
+import random
+
+e=int(input("enter how many times you want to play"))
+score=0
+s=0
+for i in range(0,e+1):
+    n=int(input("enter the number '1' for rock 👊...'2' for paper 🖐️...'3' for sessiors ✂️.."))
+    if n > 3 or n < 1 :
+        print("invalid input you loose")
+    else :
+        m=random.randint(1,3)
+        if n == 1:
+            print("you'r choice is 👊")
+            if m == 1:
+                print("Bot choice is 👊")
+                print("draw")
+            elif m == 2:
+                print("Bot choice is 🖐️")
+                print("you win this round")
+                score+=1
+                s-=1
+            else :
+                print("Bot choice is ✂️")
+                print("you lost this round")
+                score-=1
+                s+=1
+        elif n == 2:
+            print("you'r choice is 🖐️")
+            if m == 1:
+                print("Bot choice is 👊")
+                print("you win this round")
+                score+=1
+                s-=1
+            elif m == 2:
+                print("Bot choice is 🖐️")
+                print("Draw")
+            else :
+                print("Bot choice is ✂️")
+                print("you lost this round")
+                score-=1
+                s+=1
+        else :
+            print("you'r choice is ✂️")
+            if m == 1:
+                print("Bot choice is 👊") 
+                print("you lost this round")
+                score-=1
+                s+=1
+            elif m == 2:
+                print("Bot choice is 🖐️")
+                print("you win this round")
+                score+=1
+                s-=1
+            else :
+                print("Bot choice is ✂️")
+                print("draw")
+print(f"your score is {score} and bot score is {s}")
+if score>s:
+    print('you won')
+elif s>score:
+    print('bot won')
+else:
+    print('draw')
